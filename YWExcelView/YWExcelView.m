@@ -66,24 +66,22 @@
         switch (style) {
             case YWExcelViewStyleDefalut:
                 [self initStyleWithDefalut];
-                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_NotificationID object:nil];
                 break;
             case YWExcelViewStylePlain:
                 [self initStyleWithDefalut];
-                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_NotificationID object:nil];
                 break;
             case YWExcelViewStyleheadPlain:
                 [self initStyleWithHeadPlain];
-                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_NotificationID object:nil];
                 break;
             case YWExcelViewStyleheadScrollView:
                 [self initStyleWithHeadPlain];
-                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_NotificationID object:nil];
                 break;
                 
             default:
                 break;
         }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_NotificationID object:nil];
+        
     }
     return self;
 }

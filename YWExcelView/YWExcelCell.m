@@ -12,7 +12,7 @@
 <UIScrollViewDelegate>
 {
     UILabel *_titleLabel;
-    BOOL _isNotification;
+    BOOL _isAllowedNotification;
     CGFloat _lastOffX;
     CGFloat _defalutWidth;
     NSString *_notif;
@@ -184,20 +184,20 @@
 
 #pragma mark - UIScrollViewDelegate
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    _isNotification = NO;//
+    _isAllowedNotification = NO;//
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    _isNotification = NO;
+    _isAllowedNotification = NO;
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (!_isNotification) {//是自身才发通知去tableView以及其他的cell
+    if (!_isAllowedNotification) {//是自身才发通知去tableView以及其他的cell
         // 发送通知
         [[NSNotificationCenter defaultCenter] postNotificationName:_notif object:self userInfo:@{@"cellOffX":@(scrollView.contentOffset.x)}];
     }
-    _isNotification = NO;
+    _isAllowedNotification = NO;
 }
 
 -(void)scrollMove:(NSNotification*)notification
@@ -206,13 +206,13 @@
     NSObject *obj = notification.object;
     float x = [noticeInfo[@"cellOffX"] floatValue];
     if (obj!=self) {
-        _isNotification = YES;
+        _isAllowedNotification = YES;
         if (_lastOffX != x) {
             [_rightScrollView setContentOffset:CGPointMake(x, 0) animated:NO];
         }
         _lastOffX = x;
     }else{
-        _isNotification = NO;
+        _isAllowedNotification = NO;
     }
     obj = nil;
     
@@ -222,6 +222,7 @@
     NSLog(@"YWExcelCell--%s",__func__);
 
 }
+//多种手势处理
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {

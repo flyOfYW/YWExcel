@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *cellScrollNotification = @"cellScrollNotification";
 
 
 @interface YWExcelCell : UITableViewCell
