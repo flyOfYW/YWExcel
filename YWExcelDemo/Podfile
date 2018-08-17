@@ -1,0 +1,15 @@
+
+
+platform :ios, '9.0'
+
+
+target 'YWExcelDemo' do
+pod 'SDAutoLayout'
+pod 'YWRouter'
+end
+
+
+
+
+
+

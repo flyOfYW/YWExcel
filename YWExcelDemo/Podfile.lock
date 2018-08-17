@@ -1,0 +1,20 @@
+PODS:
+  - SDAutoLayout (2.2.1)
+  - YWRouter (0.0.4)
+
+DEPENDENCIES:
+  - SDAutoLayout
+  - YWRouter
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SDAutoLayout
+    - YWRouter
+
+SPEC CHECKSUMS:
+  SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
+  YWRouter: 2731671d3c1aa48896e315f88329d5e083c06334
+
+PODFILE CHECKSUM: 5709ae4c477316d1812d7cbde274305ea482dae8
+
+COCOAPODS: 1.5.0

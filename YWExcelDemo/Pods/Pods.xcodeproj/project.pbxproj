@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		361554128A5C1115199F5F02FA9E2540 /* UITableView+SDAutoTableViewCellHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B26B54DD87309F9AB5D167D6117737 /* UITableView+SDAutoTableViewCellHeight.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		428B5B166A10FAD7DABE67B138C01F23 /* UIView+SDAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C77E4543A57B8865BA1E9F53B8E22B1 /* UIView+SDAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		57F9047D13B1C5AB07277685223B244D /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6E6067EAC30198799DE86B83C48DFF /* UIView+SDAutoLayout.m */; };
+		8287061326D5425A262E2AEF1BDF349C /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 716FA687D2BA1A3E6C40013B8A7A0CE9 /* UITableView+SDAutoTableViewCellHeight.m */; };
+		8D6DBC850401270A4FBD73487B028152 /* SDAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = FCAAD06B66707AD78D02D8A7373EC98A /* SDAutoLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8DC83001AE9A317BC91FEC6280F41D64 /* SDAutoLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71148F7CD938C936274FDAEF36B8A563 /* SDAutoLayout-dummy.m */; };
+		ACE37D6043C96534C3C1134BC4135013 /* Pods-YWExcelDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F03D1DE53133E569C4C274A6DC49229A /* Pods-YWExcelDemo-dummy.m */; };
+		B159780D460DE458B05FA6290022FFC0 /* YWRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 37BD5D7C54F9C8CC1D1E9E9381CF4C98 /* YWRouter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E06EA8E002191B60898B775D772D12CC /* YWRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 227914A6132E217C2E8DCB402FA3B139 /* YWRouter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FEB53F1AFA0301C52375B6E4368192D7 /* YWRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 484D5317396B8577BEC5E8C3D94E477B /* YWRouter-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAEB11F5276AEFE1EDD064A2D2A9899A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DCA6730E9EC1CCC3D11CD1648A0766C;
+			remoteInfo = SDAutoLayout;
+		};
+		ECE3D5A771975C5D0C3EAAFCC77164EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02953CB4BE5D87B4805AC63D750981AC;
+			remoteInfo = YWRouter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C6E6067EAC30198799DE86B83C48DFF /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDAutoLayout.m"; path = "SDAutoLayoutDemo/SDAutoLayout/UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
+		1D5F85C5011F98B2F8A89270E0763D8F /* Pods-YWExcelDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YWExcelDemo-resources.sh"; sourceTree = "<group>"; };
+		227914A6132E217C2E8DCB402FA3B139 /* YWRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YWRouter.m; path = YWRouter/YWRouter.m; sourceTree = "<group>"; };
+		371506A70C38172F5F075C98332C901A /* Pods-YWExcelDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YWExcelDemo-frameworks.sh"; sourceTree = "<group>"; };
+		37BD5D7C54F9C8CC1D1E9E9381CF4C98 /* YWRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YWRouter.h; path = YWRouter/YWRouter.h; sourceTree = "<group>"; };
+		3C77E4543A57B8865BA1E9F53B8E22B1 /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SDAutoLayout.h"; path = "SDAutoLayoutDemo/SDAutoLayout/UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
+		40EF1D5558DEEA3403B370933FB16034 /* Pods-YWExcelDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YWExcelDemo.release.xcconfig"; sourceTree = "<group>"; };
+		484D5317396B8577BEC5E8C3D94E477B /* YWRouter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YWRouter-dummy.m"; sourceTree = "<group>"; };
+		4B97EA9225AF5DB4C0A8D028CE38FAAA /* libYWRouter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libYWRouter.a; path = libYWRouter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F7E8AB1B45CABF90F52E250B5EED1E0 /* Pods-YWExcelDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YWExcelDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6BD5F7CE3CAD8C56515C6558F1E32AAD /* SDAutoLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDAutoLayout-prefix.pch"; sourceTree = "<group>"; };
+		71148F7CD938C936274FDAEF36B8A563 /* SDAutoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDAutoLayout-dummy.m"; sourceTree = "<group>"; };
+		716FA687D2BA1A3E6C40013B8A7A0CE9 /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+SDAutoTableViewCellHeight.m"; path = "SDAutoLayoutDemo/SDAutoLayout/UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
+		7CA1497525E52BBBD27782E6CFC67928 /* libSDAutoLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSDAutoLayout.a; path = libSDAutoLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC3B94589C749A9F0D4DE43BD0851B9 /* Pods-YWExcelDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YWExcelDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97B26B54DD87309F9AB5D167D6117737 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+SDAutoTableViewCellHeight.h"; path = "SDAutoLayoutDemo/SDAutoLayout/UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
+		A1C7697C38FFA963BBA92B6D0A7F86B6 /* libPods-YWExcelDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-YWExcelDemo.a"; path = "libPods-YWExcelDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B05B1586EB173E5C65A8D4D87FFB5EE0 /* YWRouter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YWRouter-prefix.pch"; sourceTree = "<group>"; };
+		CD43CD0E1C13CD943E2412C7CF3D75A8 /* YWRouter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YWRouter.xcconfig; sourceTree = "<group>"; };
+		DE509E24D83301ADD2B232CC14D6F42E /* Pods-YWExcelDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YWExcelDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EEC20485D0348E8526E8FEA0C67D00F5 /* SDAutoLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDAutoLayout.xcconfig; sourceTree = "<group>"; };
+		F03D1DE53133E569C4C274A6DC49229A /* Pods-YWExcelDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YWExcelDemo-dummy.m"; sourceTree = "<group>"; };
+		FCAAD06B66707AD78D02D8A7373EC98A /* SDAutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAutoLayout.h; path = SDAutoLayoutDemo/SDAutoLayout/SDAutoLayout.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07CA60B5473A68554D99C81F03A581BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		569FD37269E43B799ADB2A51113EF33C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62613F7C15CD09CD9504C4B9318400C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06920C28310945CA6DBAD28D54779752 /* YWRouter */ = {
+			isa = PBXGroup;
+			children = (
+				37BD5D7C54F9C8CC1D1E9E9381CF4C98 /* YWRouter.h */,
+				227914A6132E217C2E8DCB402FA3B139 /* YWRouter.m */,
+				5EFA88B3E4BE86F80844659384397ED7 /* Support Files */,
+			);
+			name = YWRouter;
+			path = YWRouter;
+			sourceTree = "<group>";
+		};
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		41B5898ECC403EFC297EC92BAA414563 /* Pods-YWExcelDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DE509E24D83301ADD2B232CC14D6F42E /* Pods-YWExcelDemo-acknowledgements.markdown */,
+				8BC3B94589C749A9F0D4DE43BD0851B9 /* Pods-YWExcelDemo-acknowledgements.plist */,
+				F03D1DE53133E569C4C274A6DC49229A /* Pods-YWExcelDemo-dummy.m */,
+				371506A70C38172F5F075C98332C901A /* Pods-YWExcelDemo-frameworks.sh */,
+				1D5F85C5011F98B2F8A89270E0763D8F /* Pods-YWExcelDemo-resources.sh */,
+				4F7E8AB1B45CABF90F52E250B5EED1E0 /* Pods-YWExcelDemo.debug.xcconfig */,
+				40EF1D5558DEEA3403B370933FB16034 /* Pods-YWExcelDemo.release.xcconfig */,
+			);
+			name = "Pods-YWExcelDemo";
+			path = "Target Support Files/Pods-YWExcelDemo";
+			sourceTree = "<group>";
+		};
+		4D6D2E40452BA120C9EB4EBDD82AAFFF /* SDAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				FCAAD06B66707AD78D02D8A7373EC98A /* SDAutoLayout.h */,
+				97B26B54DD87309F9AB5D167D6117737 /* UITableView+SDAutoTableViewCellHeight.h */,
+				716FA687D2BA1A3E6C40013B8A7A0CE9 /* UITableView+SDAutoTableViewCellHeight.m */,
+				3C77E4543A57B8865BA1E9F53B8E22B1 /* UIView+SDAutoLayout.h */,
+				1C6E6067EAC30198799DE86B83C48DFF /* UIView+SDAutoLayout.m */,
+				C4949859D57F1991CDE32D40CF5C8BEF /* Support Files */,
+			);
+			name = SDAutoLayout;
+			path = SDAutoLayout;
+			sourceTree = "<group>";
+		};
+		5C453DAB5D9445E59FD5C4FB4CE371B8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				41B5898ECC403EFC297EC92BAA414563 /* Pods-YWExcelDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5EFA88B3E4BE86F80844659384397ED7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD43CD0E1C13CD943E2412C7CF3D75A8 /* YWRouter.xcconfig */,
+				484D5317396B8577BEC5E8C3D94E477B /* YWRouter-dummy.m */,
+				B05B1586EB173E5C65A8D4D87FFB5EE0 /* YWRouter-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/YWRouter";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				DC5A7E1CDBA341DF01F057D00E4F08CA /* Pods */,
+				CC9E773BC29BF49D033B8D960B95E8E9 /* Products */,
+				5C453DAB5D9445E59FD5C4FB4CE371B8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		C4949859D57F1991CDE32D40CF5C8BEF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEC20485D0348E8526E8FEA0C67D00F5 /* SDAutoLayout.xcconfig */,
+				71148F7CD938C936274FDAEF36B8A563 /* SDAutoLayout-dummy.m */,
+				6BD5F7CE3CAD8C56515C6558F1E32AAD /* SDAutoLayout-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SDAutoLayout";
+			sourceTree = "<group>";
+		};
+		CC9E773BC29BF49D033B8D960B95E8E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1C7697C38FFA963BBA92B6D0A7F86B6 /* libPods-YWExcelDemo.a */,
+				7CA1497525E52BBBD27782E6CFC67928 /* libSDAutoLayout.a */,
+				4B97EA9225AF5DB4C0A8D028CE38FAAA /* libYWRouter.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC5A7E1CDBA341DF01F057D00E4F08CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D2E40452BA120C9EB4EBDD82AAFFF /* SDAutoLayout */,
+				06920C28310945CA6DBAD28D54779752 /* YWRouter */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0B39F312AF506EA5971F633183485CB5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D6DBC850401270A4FBD73487B028152 /* SDAutoLayout.h in Headers */,
+				361554128A5C1115199F5F02FA9E2540 /* UITableView+SDAutoTableViewCellHeight.h in Headers */,
+				428B5B166A10FAD7DABE67B138C01F23 /* UIView+SDAutoLayout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D59E037110962F168F71975D6F700DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B159780D460DE458B05FA6290022FFC0 /* YWRouter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		02953CB4BE5D87B4805AC63D750981AC /* YWRouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 895B891D8F836DE5B6A478314542EDCC /* Build configuration list for PBXNativeTarget "YWRouter" */;
+			buildPhases = (
+				51D2B6CB8513ECE1A2E4E8456D013A25 /* Sources */,
+				62613F7C15CD09CD9504C4B9318400C1 /* Frameworks */,
+				5D59E037110962F168F71975D6F700DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YWRouter;
+			productName = YWRouter;
+			productReference = 4B97EA9225AF5DB4C0A8D028CE38FAAA /* libYWRouter.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		04227385BBB010D0AFFC32F0EFDA8918 /* Pods-YWExcelDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 873E640F9AE1ACBF58E6F6E3D4A33576 /* Build configuration list for PBXNativeTarget "Pods-YWExcelDemo" */;
+			buildPhases = (
+				DBDADF76D65728EA0C2B48E724A9B933 /* Sources */,
+				07CA60B5473A68554D99C81F03A581BF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25DA444FFD27BB43847BFB9E0A4BEAA8 /* PBXTargetDependency */,
+				B2ABF0EBF9C53D971D93903E937FBDAE /* PBXTargetDependency */,
+			);
+			name = "Pods-YWExcelDemo";
+			productName = "Pods-YWExcelDemo";
+			productReference = A1C7697C38FFA963BBA92B6D0A7F86B6 /* libPods-YWExcelDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8DCA6730E9EC1CCC3D11CD1648A0766C /* SDAutoLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D192D9CAC3E2C56EEBD8DE387D18076 /* Build configuration list for PBXNativeTarget "SDAutoLayout" */;
+			buildPhases = (
+				8A662353943CA85A3109CD35884E1F38 /* Sources */,
+				569FD37269E43B799ADB2A51113EF33C /* Frameworks */,
+				0B39F312AF506EA5971F633183485CB5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDAutoLayout;
+			productName = SDAutoLayout;
+			productReference = 7CA1497525E52BBBD27782E6CFC67928 /* libSDAutoLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CC9E773BC29BF49D033B8D960B95E8E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04227385BBB010D0AFFC32F0EFDA8918 /* Pods-YWExcelDemo */,
+				8DCA6730E9EC1CCC3D11CD1648A0766C /* SDAutoLayout */,
+				02953CB4BE5D87B4805AC63D750981AC /* YWRouter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51D2B6CB8513ECE1A2E4E8456D013A25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEB53F1AFA0301C52375B6E4368192D7 /* YWRouter-dummy.m in Sources */,
+				E06EA8E002191B60898B775D772D12CC /* YWRouter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A662353943CA85A3109CD35884E1F38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC83001AE9A317BC91FEC6280F41D64 /* SDAutoLayout-dummy.m in Sources */,
+				8287061326D5425A262E2AEF1BDF349C /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
+				57F9047D13B1C5AB07277685223B244D /* UIView+SDAutoLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBDADF76D65728EA0C2B48E724A9B933 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACE37D6043C96534C3C1134BC4135013 /* Pods-YWExcelDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25DA444FFD27BB43847BFB9E0A4BEAA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SDAutoLayout;
+			target = 8DCA6730E9EC1CCC3D11CD1648A0766C /* SDAutoLayout */;
+			targetProxy = EAEB11F5276AEFE1EDD064A2D2A9899A /* PBXContainerItemProxy */;
+		};
+		B2ABF0EBF9C53D971D93903E937FBDAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YWRouter;
+			target = 02953CB4BE5D87B4805AC63D750981AC /* YWRouter */;
+			targetProxy = ECE3D5A771975C5D0C3EAAFCC77164EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		2F7413DDCC2958152D19765F0E5C99C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F7E8AB1B45CABF90F52E250B5EED1E0 /* Pods-YWExcelDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3ADD09D835537401D92F17275B3760FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEC20485D0348E8526E8FEA0C67D00F5 /* SDAutoLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SDAutoLayout/SDAutoLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SDAutoLayout;
+				PRODUCT_NAME = SDAutoLayout;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FEED7BD4A31549C6E4F73E994B15E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEC20485D0348E8526E8FEA0C67D00F5 /* SDAutoLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SDAutoLayout/SDAutoLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SDAutoLayout;
+				PRODUCT_NAME = SDAutoLayout;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8891E5D8F885AA77A82A6DAFD05B2C1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD43CD0E1C13CD943E2412C7CF3D75A8 /* YWRouter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/YWRouter/YWRouter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = YWRouter;
+				PRODUCT_NAME = YWRouter;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A29BBBDD47CE4182893240CFD14C3045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40EF1D5558DEEA3403B370933FB16034 /* Pods-YWExcelDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7F76562FDB5ADAC78D58EE45E990ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD43CD0E1C13CD943E2412C7CF3D75A8 /* YWRouter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/YWRouter/YWRouter-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = YWRouter;
+				PRODUCT_NAME = YWRouter;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D192D9CAC3E2C56EEBD8DE387D18076 /* Build configuration list for PBXNativeTarget "SDAutoLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FEED7BD4A31549C6E4F73E994B15E45 /* Debug */,
+				3ADD09D835537401D92F17275B3760FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		873E640F9AE1ACBF58E6F6E3D4A33576 /* Build configuration list for PBXNativeTarget "Pods-YWExcelDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F7413DDCC2958152D19765F0E5C99C9 /* Debug */,
+				A29BBBDD47CE4182893240CFD14C3045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		895B891D8F836DE5B6A478314542EDCC /* Build configuration list for PBXNativeTarget "YWRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F76562FDB5ADAC78D58EE45E990ED7 /* Debug */,
+				8891E5D8F885AA77A82A6DAFD05B2C1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
