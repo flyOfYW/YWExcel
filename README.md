@@ -9,3 +9,56 @@
 
 ### 整体描述图
 ![图.png](https://upload-images.jianshu.io/upload_images/3030124-24e03180b43919f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/411)
+
+1、红色部分为：UITableView
+2 蓝色部分：UITableViewCell
+3 黄色部分：UISrollView
+4 类目那一行：目前设置2个模式
+1）作为独立tableView之上的view
+2）作为tableView的组头View
+
+### 设置联动的思路
+在 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
+监听偏移量，去改变其他scrollView的偏移量（采用通知中心）
+
+#### 效果图
+![效果图.gif](https://upload-images.jianshu.io/upload_images/3030124-8e3edbd810124be5.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/410)
+
+#### 类似tableView的用法
+```objc
+@protocol YWExcelViewDataSource<NSObject>
+@required
+//多少行
+- (NSInteger)excelView:(YWExcelView *)excelView numberOfRowsInSection:(NSInteger)section;
+//多少列
+- (NSInteger)itemOfRow:(YWExcelView *)excelView;
+@optional
+- (void)excelView:(YWExcelView *)excelView label:(UILabel *)label textAtIndexPath:(YWIndexPath *)indexPath;
+- (void)excelView:(YWExcelView *)excelView headView:(UILabel *)label textAtIndexPath:(YWIndexPath *)indexPath;
+//分组
+- (NSInteger)numberOfSectionsInExcelView:(YWExcelView *)excelView;
+@end
+
+@protocol YWExcelViewDelegate <NSObject>
+
+
+@optional
+
+//自定义每列的宽度/默认每列的宽度为80
+- (NSArray *)widthForItemOnExcelView:(YWExcelView *)excelView;
+
+@end
+
+```
+
+#### 样式选择
+```objc
+typedef NS_ENUM(NSInteger, YWExcelViewStyle) {
+    YWExcelViewStyleDefalut = 0,//整体表格滑动，上下、左右均可滑动（除第一列不能左右滑动以及头部View不能上下滑动外）
+    YWExcelViewStylePlain,//整体表格滑动，上下、左右均可滑动（除第一行不能上下滑动以及头部View不能上下滑动外）
+    YWExcelViewStyleheadPlain,//整体表格(包括头部View)滑动，上下、左右均可滑动（除第一列不能左右滑动外）
+    YWExcelViewStyleheadScrollView,//整体表格(包括头部View)滑动，上下、左右均可滑动
+};
+
+```
+
