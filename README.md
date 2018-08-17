@@ -7,6 +7,15 @@
 ，但是仔细研究代码后，发现其内部复用性是个问题同时不能支持上下拉刷新等，后面在github这个demo的作者提了一些我的想法，在接着加Q各自聊了Excel的控件的思路，最终我决定自己去实现一个类似Excel的控件，因此结合UITableViewLinkageDemo的思想，去摸索，最终实现了这样的控件（# YWExcel
 ）
 
+## 集成方法:
+
+### 1. 把`YWExcel`这个文件夹拖到项目中.
+
+### 2. 使用`cocoapods`:
+```ruby
+   pod 'YWExcel', '~> 0.0.1'
+```
+
 ### 整体描述图
 ![图.png](https://upload-images.jianshu.io/upload_images/3030124-24e03180b43919f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/411)
 
