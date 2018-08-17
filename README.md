@@ -23,10 +23,15 @@
 ![图.png](https://upload-images.jianshu.io/upload_images/3030124-24e03180b43919f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/411)
 
 1、红色部分为：UITableView
+
 2 蓝色部分：UITableViewCell
+
 3 黄色部分：UISrollView
+
 4 类目那一行：目前设置2个模式
+
 1）作为独立tableView之上的view
+
 2）作为tableView的组头View
 
 ### 设置联动的思路
