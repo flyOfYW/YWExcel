@@ -16,7 +16,7 @@
 
 ### 2. 使用`cocoapods`:
 ```ruby
-   pod 'YWExcel', '~> 0.0.2'
+   pod 'YWExcel'
 ```
 
 ### 整体描述图
