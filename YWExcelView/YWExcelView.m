@@ -38,7 +38,7 @@
 @property (nonatomic,   copy) NSArray *headtexts;
 
 //通知-name
-@property (nonatomic, strong) NSString *NotificationID;
+@property (nonatomic, strong, readwrite) NSString *NotificationID;
 
 //优化获取每列的宽度(只获取一遍)
 @property (nonatomic,   copy) NSArray *itemWidths;
@@ -85,6 +85,10 @@
     }
     return self;
 }
+- (void)reloadData{
+    [_tableView reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return [self getSection];
 }
@@ -399,6 +403,11 @@
     [_list addObject:self.topScrollView];
 }
 
+- (void)setShowsVerticalScrollIndicator:(BOOL)showsVerticalScrollIndicator{
+    _showsVerticalScrollIndicator = showsVerticalScrollIndicator;
+    _tableView.showsVerticalScrollIndicator = self.isShowsVerticalScrollIndicator;
+}
+
 #pragma mark-- UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -438,7 +447,6 @@
 }
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:_NotificationID object:nil];
-    
     NSLog(@"YWExcelView--%s",__func__);
     
 }

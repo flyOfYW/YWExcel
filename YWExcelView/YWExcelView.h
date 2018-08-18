@@ -33,8 +33,6 @@ typedef NS_ENUM(NSInteger, YWExcelViewStyle) {
 @end
 
 @protocol YWExcelViewDelegate <NSObject>
-
-
 @optional
 
 //自定义每列的宽度/默认每列的宽度为80
@@ -43,14 +41,23 @@ typedef NS_ENUM(NSInteger, YWExcelViewStyle) {
 @end
 
 @interface YWExcelView : UIView
+
 @property (nonatomic,assign,readonly) YWExcelViewStyle style;
 @property (nonatomic,           weak) id <YWExcelViewDelegate>delegate;
 @property (nonatomic,           weak) id <YWExcelViewDataSource>dataSource;
 //是否显示边框，宽度默认为1
 @property (nonatomic,assign,getter=isShowBorder) BOOL showBorder;
+/** 是否显示竖直方向的滚动条 */
+@property (nonatomic,assign,getter=isShowsVerticalScrollIndicator) BOOL showsVerticalScrollIndicator;
+/** 边框的颜色 */
 @property (nonatomic,strong) UIColor *showBorderColor;
+/** 内部通知的name */
+@property (nonatomic, strong, readonly) NSString *NotificationID;
+
 - (instancetype)initWithFrame:(CGRect)frame
                         style:(YWExcelViewStyle)style
                  headViewText:(NSArray *)titles
                        height:(CGFloat)height;
+/** 刷新列表 */
+- (void)reloadData;
 @end

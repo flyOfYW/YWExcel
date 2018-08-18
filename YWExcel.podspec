@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "YWExcel"
-  s.version      = "0.0.2"
+  s.version      = "1.0.0"
   s.summary      = "打造iOS的excel表展示控件"
 
   # This description is used to generate tags and improve search results.
