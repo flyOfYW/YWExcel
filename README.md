@@ -19,6 +19,10 @@
    pod 'YWExcel'
 ```
 
+#### 效果图
+![效果图.gif](https://upload-images.jianshu.io/upload_images/3030124-8e3edbd810124be5.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/410)
+
+
 ### 整体描述图
 ![图.png](https://upload-images.jianshu.io/upload_images/3030124-24e03180b43919f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/411)
 
@@ -37,9 +41,6 @@
 ### 设置联动的思路
 在 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 监听偏移量，去改变其他scrollView的偏移量（采用通知中心）
-
-#### 效果图
-![效果图.gif](https://upload-images.jianshu.io/upload_images/3030124-8e3edbd810124be5.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/410)
 
 #### 类似tableView的用法
 ```objc
