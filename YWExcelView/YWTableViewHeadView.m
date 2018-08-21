@@ -12,177 +12,112 @@
 <UIScrollViewDelegate>
 {
     BOOL _isNotification;
+    BOOL _setFrame;
+    BOOL _showBorder;
+
     CGFloat _lastOffX;
     CGFloat _defalutWidth;
+    CGFloat _titleWidth;
+
+    NSInteger _mode;
+    NSInteger _item;
+    
     NSString *_notif;
-    BOOL _setFrame;
-    NSInteger _type;
     NSArray *_widthList;
+    
+
 }
 @end
 
 @implementation YWTableViewHeadView
 
-- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
-                              itemCount:(NSInteger)item
-                         withItemWidths:(NSArray *)itemWidths
-                       itemDefalutWidth:(NSInteger)width
-                             withNotiID:(NSString *)notif
-                             showBorder:(BOOL)showBorder
-                        showBorderColor:(UIColor *)color{
-    self = [super initWithReuseIdentifier:reuseIdentifier];
-    
-    if (self) {
-        _defalutWidth = width;
-        _notif = notif;
-        _type = 1;
-        _widthList = itemWidths;
-        [self initItemWidths:itemWidths itemCount:item showBorder:showBorder showBorderColor:color];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_notif object:nil];
 
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
+                              parameter:(NSDictionary *)parameter{
+    self = [super initWithReuseIdentifier:reuseIdentifier];
+    if (self) {
+        _notif = parameter[@"notification"];
+        _defalutWidth = [parameter[@"defalutWidth"] floatValue];
+        _mode = [parameter[@"mode"] integerValue];
+        _item = [parameter[@"item"] integerValue];
+        _showBorder = [parameter[@"showBorder"] boolValue];
+        _widthList = parameter[@"itemWidths"];
+        [self initUIShowBorderColor:parameter[@"color"]];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_notif object:nil];
     }
     return self;
 }
-
-- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
-                inSrcollectionitemCount:(NSInteger)item
-                         withItemWidths:(NSArray *)itemWidths
-                       itemDefalutWidth:(NSInteger)width
-                             withNotiID:(NSString *)notif
-                             showBorder:(BOOL)showBorder
-                        showBorderColor:(UIColor *)color{
-    self = [super initWithReuseIdentifier:reuseIdentifier];
+- (void)initUIShowBorderColor:(UIColor *)color{
     
-    if (self) {
-        _defalutWidth = width;
-        _notif = notif;
-        _type = 2;
-        _widthList = itemWidths;
-        [self initItemWidths:itemWidths inSrcollectionitemCount:item showBorder:showBorder showBorderColor:color];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_notif object:nil];
-        
+    if (_mode == 0) {
+        [self.contentView addSubview:self.nameLabel];
     }
-    return self;
-}
-- (void)initItemWidths:(NSArray *)itemWidths
-inSrcollectionitemCount:(NSInteger)items
-            showBorder:(BOOL)showBorder
-       showBorderColor:(UIColor *)color{
-    
-    CGFloat titleWidth = 0;
-    
-    if (itemWidths) {
-        titleWidth = [itemWidths.firstObject floatValue];
-    }else{
-        titleWidth = _defalutWidth;
-    }
-    
-
-    UIScrollView *scr = [[UIScrollView alloc] initWithFrame:CGRectZero];
-    
-    scr.autoresizingMask =  UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;//自适应宽度|高度
-    _rightScrollView = scr;
-    CGFloat totalWidth = 0;
-    CGFloat startX = 0;
-    for (int i = 0; i < items; i ++) {
-        CGFloat w = 0;
-        if (i < itemWidths.count) {
-            w = [itemWidths[i] floatValue];
-        }else{
-            w = _defalutWidth;
-        }
-        UILabel *label1 = [UILabel new];
-        label1.frame = CGRectMake(startX, 0, w, CGRectGetHeight(self.contentView.frame));
-        label1.autoresizingMask = UIViewAutoresizingFlexibleHeight;//自适应宽度|高度
-        startX = startX + w;
-        label1.font = [UIFont systemFontOfSize:14];
-        label1.textAlignment = NSTextAlignmentCenter;
-        if (showBorder) {
-            label1.layer.borderWidth = 1;
-            label1.layer.borderColor = color.CGColor;
-        }
-        [_rightScrollView addSubview:label1];
-        totalWidth += w;
-    }
-    _rightScrollView.showsVerticalScrollIndicator = NO;
-    _rightScrollView.showsHorizontalScrollIndicator = NO;
-    _rightScrollView.contentSize = CGSizeMake(totalWidth, 0);
-    _rightScrollView.delegate = self;
-    _rightScrollView.bounces = NO;
-    [self.contentView addSubview:_rightScrollView];
+    self.rightScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;//自适应宽度|高度
+    [self createLabels:_item showBorderColor:color];
+    [self.contentView addSubview:self.rightScrollView];
     
 }
-- (void)initItemWidths:(NSArray *)itemWidths
-             itemCount:(NSInteger)items
-            showBorder:(BOOL)showBorder
-       showBorderColor:(UIColor *)color{
+- (void)createLabels:(NSInteger)items
+     showBorderColor:(UIColor *)color{
     
-    CGFloat titleWidth = 0;
+    CGSize size = self.contentView.frame.size;
     
-    if (itemWidths) {
-        titleWidth = [itemWidths.firstObject floatValue];
-    }else{
-        titleWidth = _defalutWidth;
-    }
-    
-    
-    UILabel *labe = [[UILabel alloc] initWithFrame:CGRectZero];
-
-    labe.autoresizingMask =  UIViewAutoresizingFlexibleHeight;//自适应宽度|高度
-    labe.textAlignment = NSTextAlignmentCenter;
-    labe.font = [UIFont systemFontOfSize:14];
-    if (showBorder) {
-        labe.layer.borderWidth = 1;
-        labe.layer.borderColor = color.CGColor;
-    }
-    [self.contentView addSubview:labe];
-    _nameLabel = labe;
-    
-    UIScrollView *scr = [[UIScrollView alloc] initWithFrame:CGRectZero];
-
-    scr.autoresizingMask =  UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;//自适应宽度|高度
-    _rightScrollView = scr;
     CGFloat totalWidth = 0;
     CGFloat startX = 0;
     for (int i = 1; i < items; i ++) {
         CGFloat w = 0;
-        if (i < itemWidths.count) {
-            w = [itemWidths[i] floatValue];
+        if (i < _widthList.count) {
+            w = [_widthList[i] floatValue];
         }else{
             w = _defalutWidth;
         }
         UILabel *label1 = [UILabel new];
-        label1.frame = CGRectMake(startX, 0, w, CGRectGetHeight(self.contentView.frame));
+        label1.frame = CGRectMake(startX, 0, w, size.height);
         label1.autoresizingMask = UIViewAutoresizingFlexibleHeight;//自适应宽度|高度
         startX = startX + w;
         label1.font = [UIFont systemFontOfSize:14];
         label1.textAlignment = NSTextAlignmentCenter;
-        if (showBorder) {
+        if (_showBorder) {
             label1.layer.borderWidth = 1;
             label1.layer.borderColor = color.CGColor;
         }
-        [_rightScrollView addSubview:label1];
+        [self.rightScrollView addSubview:label1];
         totalWidth += w;
     }
-    _rightScrollView.showsVerticalScrollIndicator = NO;
-    _rightScrollView.showsHorizontalScrollIndicator = NO;
-    _rightScrollView.contentSize = CGSizeMake(totalWidth, 0);
-    _rightScrollView.delegate = self;
-    _rightScrollView.bounces = NO;
-    [self.contentView addSubview:_rightScrollView];
+    self.rightScrollView.contentSize = CGSizeMake(totalWidth, 0);
     
 }
+
+- (UILabel *)nameLabel{
+    if (!_nameLabel) {
+        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _titleWidth, self.contentView.frame.size.height)];
+        _nameLabel.autoresizingMask =  UIViewAutoresizingFlexibleHeight;//高度
+        _nameLabel.textAlignment = NSTextAlignmentCenter;
+        _nameLabel.font = [UIFont systemFontOfSize:14];
+    }
+    return _nameLabel;
+}
+- (UIScrollView *)rightScrollView{
+    if (!_rightScrollView) {
+        _rightScrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+        _rightScrollView.showsVerticalScrollIndicator = NO;
+        _rightScrollView.showsHorizontalScrollIndicator = NO;
+        _rightScrollView.delegate = self;
+        _rightScrollView.bounces = NO;
+    }
+    return _rightScrollView;
+}
+
 - (void)setLeftname{
-    CGFloat titleWidth = 0;
     
-    if (_widthList) {
-        titleWidth = [_widthList.firstObject floatValue];
+    if (_widthList.count > 0) {
+        _titleWidth = [_widthList.firstObject floatValue];
     }else{
-        titleWidth = _defalutWidth;
+        _titleWidth = _defalutWidth;
     }
     CGSize size = self.contentView.frame.size;
-    self.nameLabel.frame = CGRectMake(0, 0, titleWidth, size.height);
-   self.rightScrollView.frame = CGRectMake(titleWidth, 0, size.width-titleWidth, size.height);
+    self.nameLabel.frame = CGRectMake(0, 0, _titleWidth, size.height);
+    self.rightScrollView.frame = CGRectMake(_titleWidth, 0, size.width-_titleWidth, size.height);
     _setFrame = YES;
 }
 - (void)setScrollview{
@@ -234,9 +169,9 @@ inSrcollectionitemCount:(NSInteger)items
 - (void)layoutSubviews{
     [super layoutSubviews];
     if (!CGRectIsEmpty(self.contentView.frame) && !_setFrame) {
-        if (_type == 1) {
+        if (_mode == 0) {
             [self setLeftname];
-        }else if (_type == 2){
+        }else if (_mode == 1){
             [self setScrollview];
         }
     }

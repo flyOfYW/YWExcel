@@ -47,7 +47,16 @@
 }
 - (void)test1{
     
-    YWExcelView *exceView = [[YWExcelView alloc] initWithFrame:CGRectMake(20, 74, CGRectGetWidth(self.view.frame) - 40, 250) style:YWExcelViewStyleDefalut headViewText:@[@"类目",@"语文",@"数学",@"物理",@"化学",@"生物",@"英语",@"政治"] height:40];
+    
+//    YWExcelView *exceView = [[YWExcelView alloc] initWithFrame:CGRectMake(20, 74, CGRectGetWidth(self.view.frame) - 40, 250) style:YWExcelViewStyleDefalut headViewText:@[@"类目",@"语文",@"数学",@"物理",@"化学",@"生物",@"英语",@"政治"] height:40];
+    
+    YWExcelViewMode *mode = [YWExcelViewMode new];
+    mode.style = YWExcelViewStyleDefalut;
+    mode.headTexts = @[@"类目",@"语文",@"数学",@"物理",@"化学",@"生物",@"英语",@"政治"];
+    mode.defalutHeight = 40;
+    //推荐使用这样初始化
+    YWExcelView *exceView = [[YWExcelView alloc] initWithFrame:CGRectMake(20, 74, CGRectGetWidth(self.view.frame) - 40, 250) mode:mode];
+    
     exceView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     exceView.dataSource = self;
     exceView.showBorder = YES;

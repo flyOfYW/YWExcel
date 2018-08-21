@@ -18,6 +18,7 @@
 		DA0F8A06212565CF00A0DFFA /* YWTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0F8A05212565CF00A0DFFA /* YWTestViewController.m */; };
 		DA0F8A0921257A7200A0DFFA /* YWTestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0F8A0821257A7200A0DFFA /* YWTestViewController2.m */; };
 		DA0F8A0F21258D0500A0DFFA /* YWTestViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0F8A0E21258D0500A0DFFA /* YWTestViewController3.m */; };
+		DA6D4746212C1ED800B01282 /* YWExcelViewMode.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6D4745212C1ED800B01282 /* YWExcelViewMode.m */; };
 		DAC428E62126686300B1231F /* YWTestViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC428E52126686300B1231F /* YWTestViewController4.m */; };
 		DAC428F021267C6700B1231F /* YWExcelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC428E921267C6700B1231F /* YWExcelCell.m */; };
 		DAC428F121267C6700B1231F /* YWExcelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC428EB21267C6700B1231F /* YWExcelView.m */; };
@@ -69,6 +70,8 @@
 		DA0F8A0821257A7200A0DFFA /* YWTestViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWTestViewController2.m; sourceTree = "<group>"; };
 		DA0F8A0D21258D0500A0DFFA /* YWTestViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWTestViewController3.h; sourceTree = "<group>"; };
 		DA0F8A0E21258D0500A0DFFA /* YWTestViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWTestViewController3.m; sourceTree = "<group>"; };
+		DA6D4744212C1ED800B01282 /* YWExcelViewMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWExcelViewMode.h; sourceTree = "<group>"; };
+		DA6D4745212C1ED800B01282 /* YWExcelViewMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWExcelViewMode.m; sourceTree = "<group>"; };
 		DAC428E42126686300B1231F /* YWTestViewController4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YWTestViewController4.h; sourceTree = "<group>"; };
 		DAC428E52126686300B1231F /* YWTestViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YWTestViewController4.m; sourceTree = "<group>"; };
 		DAC428E821267C6700B1231F /* YWExcelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWExcelCell.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				DAC428ED21267C6700B1231F /* YWIndexPath.m */,
 				DAC428EE21267C6700B1231F /* YWTableViewHeadView.h */,
 				DAC428EF21267C6700B1231F /* YWTableViewHeadView.m */,
+				DA6D4744212C1ED800B01282 /* YWExcelViewMode.h */,
+				DA6D4745212C1ED800B01282 /* YWExcelViewMode.m */,
 			);
 			name = YWExcelView;
 			path = ../../YWExcelView;
@@ -365,6 +370,7 @@
 				DA0F8A0921257A7200A0DFFA /* YWTestViewController2.m in Sources */,
 				DA0F8A0F21258D0500A0DFFA /* YWTestViewController3.m in Sources */,
 				DA0F89F9212551F700A0DFFA /* TableViewController.m in Sources */,
+				DA6D4746212C1ED800B01282 /* YWExcelViewMode.m in Sources */,
 				DA0F89C72125517B00A0DFFA /* AppDelegate.m in Sources */,
 				DAC428E62126686300B1231F /* YWTestViewController4.m in Sources */,
 				DA0F8A06212565CF00A0DFFA /* YWTestViewController.m in Sources */,
@@ -535,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y784R48MX2;
 				INFOPLIST_FILE = YWExcelDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -550,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y784R48MX2;
 				INFOPLIST_FILE = YWExcelDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

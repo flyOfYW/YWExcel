@@ -14,18 +14,5 @@
 
 @property (nonatomic, strong) UILabel *nameLabel;
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
-                              itemCount:(NSInteger)item
-                         withItemWidths:(NSArray *)itemWidths
-                       itemDefalutWidth:(NSInteger)width
-                             withNotiID:(NSString *)notif
-                             showBorder:(BOOL)showBorder
-                        showBorderColor:(UIColor *)color;
-
-- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
-                inSrcollectionitemCount:(NSInteger)item
-                         withItemWidths:(NSArray *)itemWidths
-                       itemDefalutWidth:(NSInteger)width
-                             withNotiID:(NSString *)notif
-                             showBorder:(BOOL)showBorder
-                        showBorderColor:(UIColor *)color;
+                              parameter:(NSDictionary *)parameter;
 @end

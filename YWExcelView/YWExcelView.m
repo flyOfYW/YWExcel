@@ -48,46 +48,18 @@
 @end
 
 @implementation YWExcelView
-
-- (instancetype)initWithFrame:(CGRect)frame
-                        style:(YWExcelViewStyle)style
-                 headViewText:(NSArray *)titles
-                       height:(CGFloat)height{
+//MARK: --- public
+- (instancetype)initWithFrame:(CGRect)frame mode:(YWExcelViewMode *)mode{
     self = [super initWithFrame:frame];
     if (self) {
-        _headHeight = height;
-        _style = style;
-        _defalutWidth = 80;
-        _list = @[].mutableCopy;
-        _headtexts = titles;
-        //以当前对象的指针地址为通知的名称，这样可以避免同一个界面，有多个YWExcelView的对象时，引起的通知混乱
-        _NotificationID = [NSString stringWithFormat:@"%p",self];
-        _showBorderColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
-        switch (style) {
-            case YWExcelViewStyleDefalut:
-                [self initStyleWithDefalut];
-                break;
-            case YWExcelViewStylePlain:
-                [self initStyleWithDefalut];
-                break;
-            case YWExcelViewStyleheadPlain:
-                [self initStyleWithHeadPlain];
-                break;
-            case YWExcelViewStyleheadScrollView:
-                [self initStyleWithHeadPlain];
-                break;
-                
-            default:
-                break;
-        }
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_NotificationID object:nil];
-        
+        [self initSetingInMode:mode];
     }
     return self;
 }
 - (void)reloadData{
     [_tableView reloadData];
 }
+//MARK: -- UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return [self getSection];
@@ -117,11 +89,40 @@
     }
     return nil;
 }
-
+//MARK: --- privated
+- (void)initSetingInMode:(YWExcelViewMode *)mode{
+    _headHeight = mode.defalutHeight;
+    _style = mode.style;
+    _defalutWidth = 80;
+    _list = @[].mutableCopy;
+    _itemWidths = @[];
+    _headtexts = mode.headTexts;
+    //以当前对象的指针地址为通知的名称，这样可以避免同一个界面，有多个YWExcelView的对象时，引起的通知混乱
+    _NotificationID = [NSString stringWithFormat:@"%p",self];
+    _showBorderColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
+    switch (_style) {
+        case YWExcelViewStyleDefalut:
+            [self initStyleWithDefalut];
+            break;
+        case YWExcelViewStylePlain:
+            [self initStyleWithDefalut];
+            break;
+        case YWExcelViewStyleheadPlain:
+            [self initStyleWithHeadPlain];
+            break;
+        case YWExcelViewStyleheadScrollView:
+            [self initStyleWithHeadPlain];
+            break;
+            
+        default:
+            break;
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_NotificationID object:nil];
+}
 - (YWTableViewHeadView *)getStyleheadPlainExcelView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     YWTableViewHeadView *headView = (YWTableViewHeadView *)[tableView dequeueReusableCellWithIdentifier:@"headView"];
     if (!headView) {
-        headView = [[YWTableViewHeadView alloc] initWithReuseIdentifier:@"headView" itemCount:[self item] withItemWidths:[self itemWidth] itemDefalutWidth:_defalutWidth withNotiID:_NotificationID showBorder:self.isShowBorder showBorderColor:self.showBorderColor];
+        headView = [[YWTableViewHeadView alloc] initWithReuseIdentifier:@"headView" parameter:@{@"item":@([self item]),@"itemWidths":[self itemWidth],@"defalutWidth":@(_defalutWidth),@"notification":_NotificationID,@"showBorder":@(self.isShowBorder),@"color":self.showBorderColor,@"mode":@"0"}];
     }
     YWIndexPath *index = [YWIndexPath indexPathForItem:0 section:section];
     [_dataSource excelView:self headView:headView.nameLabel textAtIndexPath:index];
@@ -138,7 +139,7 @@
 - (YWTableViewHeadView *)getStyleheadScrollViewExcelView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
   YWTableViewHeadView *headView = (YWTableViewHeadView *)[tableView dequeueReusableCellWithIdentifier:@"headScrollectionView"];
     if (!headView) {
-        headView = [[YWTableViewHeadView alloc] initWithReuseIdentifier:@"headScrollectionView" inSrcollectionitemCount:[self item] withItemWidths:[self itemWidth] itemDefalutWidth:_defalutWidth withNotiID:_NotificationID showBorder:self.isShowBorder showBorderColor:self.showBorderColor];
+        headView = [[YWTableViewHeadView alloc] initWithReuseIdentifier:@"headView" parameter:@{@"item":@([self item]),@"itemWidths":[self itemWidth],@"defalutWidth":@(_defalutWidth),@"notification":_NotificationID,@"showBorder":@(self.isShowBorder),@"color":self.showBorderColor,@"mode":@"1"}];
     }
     int i = 0;
     for (UILabel *label in headView.rightScrollView.subviews) {
@@ -163,7 +164,7 @@
 - (YWExcelCell *)getPlainCellTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWExcelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"plainCell"];
     if (!cell) {
-        cell = [[YWExcelCell alloc] initWithCellInSrcollectionStyle:UITableViewCellStyleDefault reuseIdentifier:@"plainCell" itemCount:[self item] withItemWidths:[self itemWidth] itemDefalutWidth:_defalutWidth withNotiID:_NotificationID showBorder:self.isShowBorder showBorderColor:self.showBorderColor];
+        cell = [[YWExcelCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"plainCell" parameter:@{@"item":@([self item]),@"itemWidths":[self itemWidth],@"defalutWidth":@(_defalutWidth),@"notification":_NotificationID,@"showBorder":@(self.isShowBorder),@"color":self.showBorderColor,@"mode":@"1"}];
     }
     int i = 0;
     for (UILabel *label in cell.rightScrollView.subviews) {
@@ -179,7 +180,7 @@
 - (YWExcelCell *)getDefalutCellTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     YWExcelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[YWExcelCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell" itemCount:[self item] withItemWidths:[self itemWidth] itemDefalutWidth:_defalutWidth withNotiID:_NotificationID showBorder:self.isShowBorder showBorderColor:self.showBorderColor];
+        cell = [[YWExcelCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"plainCell" parameter:@{@"item":@([self item]),@"itemWidths":[self itemWidth],@"defalutWidth":@(_defalutWidth),@"notification":_NotificationID,@"showBorder":@(self.isShowBorder),@"color":self.showBorderColor,@"mode":@"0"}];
     }
     YWIndexPath *index = [YWIndexPath indexPathForItem:0 row:indexPath.row section:0];
     [_dataSource excelView:self label:cell.nameLabel textAtIndexPath:index];
@@ -311,7 +312,7 @@
     NSInteger count = [self item];
     NSArray *arr = [self itemWidth];
     
-    CGFloat lblW = arr ? [[arr firstObject] floatValue] : _defalutWidth;
+    CGFloat lblW = arr.count > 0 ? [[arr firstObject] floatValue] : _defalutWidth;
     
     UILabel *titleLbl = [UILabel new];
     titleLbl.frame = CGRectMake(0, 0, lblW, _headHeight);
@@ -451,4 +452,43 @@
     
 }
 
+
+//MARK: --- 旧版弃用的方法
+- (instancetype)initWithFrame:(CGRect)frame
+                        style:(YWExcelViewStyle)style
+                 headViewText:(NSArray *)titles
+                       height:(CGFloat)height{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _headHeight = height;
+        _style = style;
+        _defalutWidth = 80;
+        _list = @[].mutableCopy;
+        _itemWidths = @[];
+        _headtexts = titles;
+        //以当前对象的指针地址为通知的名称，这样可以避免同一个界面，有多个YWExcelView的对象时，引起的通知混乱
+        _NotificationID = [NSString stringWithFormat:@"%p",self];
+        _showBorderColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
+        switch (style) {
+            case YWExcelViewStyleDefalut:
+                [self initStyleWithDefalut];
+                break;
+            case YWExcelViewStylePlain:
+                [self initStyleWithDefalut];
+                break;
+            case YWExcelViewStyleheadPlain:
+                [self initStyleWithHeadPlain];
+                break;
+            case YWExcelViewStyleheadScrollView:
+                [self initStyleWithHeadPlain];
+                break;
+                
+            default:
+                break;
+        }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollMove:) name:_NotificationID object:nil];
+        
+    }
+    return self;
+}
 @end

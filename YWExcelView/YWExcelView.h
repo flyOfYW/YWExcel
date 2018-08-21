@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "YWIndexPath.h"
+#import "YWExcelViewMode.h"
 
 @class YWExcelView;
 
 
-typedef NS_ENUM(NSInteger, YWExcelViewStyle) {
-    YWExcelViewStyleDefalut = 0,//整体表格滑动，上下、左右均可滑动（除第一列不能左右滑动以及头部View不能上下滑动外）
-    YWExcelViewStylePlain,//整体表格滑动，上下、左右均可滑动（除第一行不能上下滑动以及头部View不能上下滑动外）
-    YWExcelViewStyleheadPlain,//整体表格(包括头部View)滑动，上下、左右均可滑动（除第一列不能左右滑动外）
-    YWExcelViewStyleheadScrollView,//整体表格(包括头部View)滑动，上下、左右均可滑动
-};
+//typedef NS_ENUM(NSInteger, YWExcelViewStyle) {
+//    YWExcelViewStyleDefalut = 0,//整体表格滑动，上下、左右均可滑动（除第一列不能左右滑动以及头部View不能上下滑动外）
+//    YWExcelViewStylePlain,//整体表格滑动，上下、左右均可滑动（除第一行不能上下滑动以及头部View不能上下滑动外）
+//    YWExcelViewStyleheadPlain,//整体表格(包括头部View)滑动，上下、左右均可滑动（除第一列不能左右滑动外）
+//    YWExcelViewStyleheadScrollView,//整体表格(包括头部View)滑动，上下、左右均可滑动
+//};
 
 @protocol YWExcelViewDataSource<NSObject>
 @required
@@ -54,10 +55,14 @@ typedef NS_ENUM(NSInteger, YWExcelViewStyle) {
 /** 内部通知的name */
 @property (nonatomic, strong, readonly) NSString *NotificationID;
 
+//1.1.0版本-废弃
 - (instancetype)initWithFrame:(CGRect)frame
                         style:(YWExcelViewStyle)style
                  headViewText:(NSArray *)titles
                        height:(CGFloat)height;
+//新的便利构造方法（推荐使用该方法）
+- (instancetype)initWithFrame:(CGRect)frame mode:(YWExcelViewMode *)mode;
+
 /** 刷新列表 */
 - (void)reloadData;
 @end

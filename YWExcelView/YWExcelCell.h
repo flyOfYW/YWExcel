@@ -18,18 +18,22 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style
               reuseIdentifier:(NSString *)reuseIdentifier
-                    itemCount:(NSInteger)item
-               withItemWidths:(NSArray *)itemWidths
-             itemDefalutWidth:(NSInteger)width
-                   withNotiID:(NSString *)notif
-                   showBorder:(BOOL)showBorder
-              showBorderColor:(UIColor *)color;
-- (instancetype)initWithCellInSrcollectionStyle:(UITableViewCellStyle)style
-                                reuseIdentifier:(NSString *)reuseIdentifier
-                                      itemCount:(NSInteger)item
-                                 withItemWidths:(NSArray *)itemWidths
-                               itemDefalutWidth:(NSInteger)width
-                                     withNotiID:(NSString *)notif
-                                     showBorder:(BOOL)showBorder
-                                showBorderColor:(UIColor *)color;
+                    parameter:(NSDictionary *)parameter;
+
+//- (instancetype)initWithStyle:(UITableViewCellStyle)style
+//              reuseIdentifier:(NSString *)reuseIdentifier
+//                    itemCount:(NSInteger)item
+//               withItemWidths:(NSArray *)itemWidths
+//             itemDefalutWidth:(NSInteger)width
+//                   withNotiID:(NSString *)notif
+//                   showBorder:(BOOL)showBorder
+//              showBorderColor:(UIColor *)color;
+//- (instancetype)initWithCellInSrcollectionStyle:(UITableViewCellStyle)style
+//                                reuseIdentifier:(NSString *)reuseIdentifier
+//                                      itemCount:(NSInteger)item
+//                                 withItemWidths:(NSArray *)itemWidths
+//                               itemDefalutWidth:(NSInteger)width
+//                                     withNotiID:(NSString *)notif
+//                                     showBorder:(BOOL)showBorder
+//                                showBorderColor:(UIColor *)color;
 @end
