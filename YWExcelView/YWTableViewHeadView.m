@@ -51,9 +51,11 @@
     
     if (_mode == 0) {
         [self.contentView addSubview:self.nameLabel];
+        [self createLabels:_item showBorderColor:color];
+    }else{
+        [self createLabelsInScrollView:_item showBorderColor:color];
     }
     self.rightScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;//自适应宽度|高度
-    [self createLabels:_item showBorderColor:color];
     [self.contentView addSubview:self.rightScrollView];
     
 }
@@ -65,6 +67,36 @@
     CGFloat totalWidth = 0;
     CGFloat startX = 0;
     for (int i = 1; i < items; i ++) {
+        CGFloat w = 0;
+        if (i < _widthList.count) {
+            w = [_widthList[i] floatValue];
+        }else{
+            w = _defalutWidth;
+        }
+        UILabel *label1 = [UILabel new];
+        label1.frame = CGRectMake(startX, 0, w, size.height);
+        label1.autoresizingMask = UIViewAutoresizingFlexibleHeight;//自适应宽度|高度
+        startX = startX + w;
+        label1.font = [UIFont systemFontOfSize:14];
+        label1.textAlignment = NSTextAlignmentCenter;
+        if (_showBorder) {
+            label1.layer.borderWidth = 1;
+            label1.layer.borderColor = color.CGColor;
+        }
+        [self.rightScrollView addSubview:label1];
+        totalWidth += w;
+    }
+    self.rightScrollView.contentSize = CGSizeMake(totalWidth, 0);
+    
+}
+
+- (void)createLabelsInScrollView:(NSInteger)items
+                 showBorderColor:(UIColor *)color{
+    CGSize size = self.contentView.frame.size;
+    
+    CGFloat totalWidth = 0;
+    CGFloat startX = 0;
+    for (int i = 0; i < items; i ++) {
         CGFloat w = 0;
         if (i < _widthList.count) {
             w = [_widthList[i] floatValue];

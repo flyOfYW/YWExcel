@@ -56,9 +56,6 @@
     mode.defalutHeight = 40;
     //推荐使用这样初始化
     YWExcelView *exceView = [[YWExcelView alloc] initWithFrame:CGRectMake(20, 74, CGRectGetWidth(self.view.frame) - 40, 250) mode:mode];
-    
-
-    
     exceView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     exceView.dataSource = self;
     exceView.showBorder = YES;

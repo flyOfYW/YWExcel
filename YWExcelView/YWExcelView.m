@@ -283,6 +283,9 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [self addSubview:_tableView];
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
 }
 
 
