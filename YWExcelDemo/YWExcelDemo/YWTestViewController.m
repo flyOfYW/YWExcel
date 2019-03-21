@@ -15,6 +15,7 @@
 {
     NSString *_ctl;
     NSMutableArray *_list;
+    YWExcelView *_exceView;
 }
 @end
 
@@ -56,7 +57,7 @@
     mode.defalutHeight = 40;
     //推荐使用这样初始化
     YWExcelView *exceView = [[YWExcelView alloc] initWithFrame:CGRectMake(20, 74, CGRectGetWidth(self.view.frame) - 40, 250) mode:mode];
-    
+    _exceView = exceView;
     exceView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     exceView.dataSource = self;
     exceView.showBorder = YES;
@@ -71,6 +72,19 @@
     menuLabel.text = _ctl;
     [self.view addSubview:menuLabel];
     
+    UIButton *men1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    men1.frame = CGRectMake(20, CGRectGetMaxY(menuLabel.frame), 60, 30);
+    men1.backgroundColor = [UIColor redColor];
+    [men1 addTarget:self action:@selector(clickAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:men1];
+    
+}
+
+- (void)clickAction{
+    NSArray *list = [self->_exceView visibleCells];
+    for (UIView *view in list) {
+        NSLog(@"%@",view);
+    }
 }
 
 //多少行

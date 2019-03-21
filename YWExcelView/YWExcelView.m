@@ -188,6 +188,7 @@
     int i = 1;
     for (UILabel *label in cell.rightScrollView.subviews) {
         YWIndexPath *indexPathCell = [YWIndexPath indexPathForItem:i row:indexPath.row section:0];
+        cell.indexPath = index;
         [_dataSource excelView:self label:label textAtIndexPath:indexPathCell];
         indexPathCell = nil;
         i++;
@@ -450,12 +451,8 @@
     noticeInfo = nil;
 }
 - (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:_NotificationID object:nil];
-    NSLog(@"YWExcelView--%s",__func__);
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:_NotificationID object:nil];    
 }
-
-
 //MARK: --- 旧版弃用的方法
 - (instancetype)initWithFrame:(CGRect)frame
                         style:(YWExcelViewStyle)style

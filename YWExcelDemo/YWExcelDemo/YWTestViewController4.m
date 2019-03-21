@@ -17,6 +17,7 @@
 {
     NSString *_ctl;
     NSMutableArray *_list;
+    YWExcelView *_exceView;
 }
 @end
 
@@ -60,6 +61,7 @@
     exceView.dataSource = self;
     exceView.showBorder = YES;
     [self.view addSubview:exceView];
+    _exceView = exceView;
     
     UILabel *menuLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(exceView.frame) + 10, CGRectGetWidth(self.view.frame) - 40, 20)];
     menuLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -68,7 +70,20 @@
     menuLabel.text = _ctl;
     [self.view addSubview:menuLabel];
     
+    UIButton *men1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    men1.frame = CGRectMake(20, CGRectGetMaxY(menuLabel.frame), 60, 30);
+    men1.backgroundColor = [UIColor redColor];
+    [men1 addTarget:self action:@selector(clickAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:men1];
+    
 }
+- (void)clickAction{
+    NSArray *list = [self->_exceView visibleCells];
+    for (UIView *view in list) {
+        NSLog(@"%@",view);
+    }
+}
+
 - (NSInteger)numberOfSectionsInExcelView:(YWExcelView *)excelView{
     return 3;
 }

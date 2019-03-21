@@ -194,8 +194,6 @@
 }
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:_notif object:nil];
-    NSLog(@"YWTableViewHeadView--%s",__func__);
-
 }
 
 - (void)layoutSubviews{

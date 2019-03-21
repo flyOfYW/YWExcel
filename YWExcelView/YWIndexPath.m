@@ -28,7 +28,5 @@
     index.item = item;
     return index;
 }
-- (void)dealloc{
-    NSLog(@"YWIndexPath--%s",__func__);
-}
+
 @end

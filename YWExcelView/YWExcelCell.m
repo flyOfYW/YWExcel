@@ -202,8 +202,6 @@
 }
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:_notif object:nil];
-    NSLog(@"YWExcelCell--%s",__func__);
-
 }
 //多种手势处理
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
