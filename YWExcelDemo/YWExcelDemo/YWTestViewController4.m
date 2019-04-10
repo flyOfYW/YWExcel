@@ -70,18 +70,7 @@
     menuLabel.text = _ctl;
     [self.view addSubview:menuLabel];
     
-    UIButton *men1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    men1.frame = CGRectMake(20, CGRectGetMaxY(menuLabel.frame), 60, 30);
-    men1.backgroundColor = [UIColor redColor];
-    [men1 addTarget:self action:@selector(clickAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:men1];
     
-}
-- (void)clickAction{
-    NSArray *list = [self->_exceView visibleCells];
-    for (UIView *view in list) {
-        NSLog(@"%@",view);
-    }
 }
 
 - (NSInteger)numberOfSectionsInExcelView:(YWExcelView *)excelView{

@@ -437,7 +437,7 @@
     
     NSDictionary *noticeInfo = notification.userInfo;
     float x = [noticeInfo[@"cellOffX"] floatValue];
-//    NSLog(@"view收到===%f",x);
+    NSLog(@"view收到===%f",x);
     if (self.cellLastX != x) {//避免重复设置偏移量
         self.cellLastX = x;
         if (self.topScrollView) {
