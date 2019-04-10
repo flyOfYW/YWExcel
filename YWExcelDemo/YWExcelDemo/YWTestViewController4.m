@@ -93,7 +93,5 @@
 - (void)excelView:(YWExcelView *)excelView headView:(UILabel *)label textAtIndexPath:(YWIndexPath *)indexPath{
     label.text = [NSString stringWithFormat:@"组头%zi列%zi",indexPath.section,indexPath.item];
 }
-- (void)dealloc{
-    NSLog(@"YWTestViewController4--%s",__func__);
-}
+
 @end

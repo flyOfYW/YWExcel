@@ -93,7 +93,5 @@
         }
     }
 }
-- (void)dealloc{
-    NSLog(@"YWTestViewController--%s",__func__);
-}
+
 @end

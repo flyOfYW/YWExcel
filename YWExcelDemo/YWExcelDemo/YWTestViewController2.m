@@ -86,7 +86,5 @@
         label.text = values[indexPath.item];
     }
 }
-- (void)dealloc{
-    NSLog(@"YWTestViewController2--%s",__func__);
-}
+
 @end
