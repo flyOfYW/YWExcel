@@ -1,13 +1,15 @@
 # YWExcel
 打造类似excel表的展示控件
 
+注意：
+支持头部刷新以及单元格点击事件等，请移步至https://github.com/flyOfYW/YWTableExcel
+
+
 采用UITableView和UIScrollView嵌套使用来实现Excel、课程表、上下左右联动效果。
 
 在项目中遇到了许多报表，虽然目前只是一个简单的展示，可以用tableView单元格显示，满足目前的需求，但是我仔细考虑了，能不能实现类似Excel表那样展示，既可以左右滑动，又可以上下滑动，当时找了许多资料，也找了许多国外网站的资料，却找不到这样类似的开源项目，最终我决定自己去实现一个类似Excel的控件（# YWExcel
 ）
 
-注意：
-支持头部刷新以及单元格点击事件等，请移步至https://github.com/flyOfYW/YWTableExcel
 
 ## 兼容性
 1、兼容横屏和竖屏
