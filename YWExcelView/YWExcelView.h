@@ -56,10 +56,11 @@
 @property (nonatomic, strong, readonly) NSString *NotificationID;
 
 //1.1.0版本-废弃
+/// Use initWithFrame: mode: instead.
 - (instancetype)initWithFrame:(CGRect)frame
                         style:(YWExcelViewStyle)style
                  headViewText:(NSArray *)titles
-                       height:(CGFloat)height;
+                       height:(CGFloat)height __attribute__((deprecated("Use initWithFrame: mode: instead.")));
 //新的便利构造方法（推荐使用该方法）
 - (instancetype)initWithFrame:(CGRect)frame mode:(YWExcelViewMode *)mode;
 
