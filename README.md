@@ -2,7 +2,7 @@
 打造类似excel表的展示控件
 
 注意：
-支持头部刷新以及单元格点击事件等，请移步至https://github.com/flyOfYW/YWTableExcel
+支持头部刷新以及单元格点击事件等更高级功能，请移步至https://github.com/flyOfYW/YWTableExcel
 
 
 采用UITableView和UIScrollView嵌套使用来实现Excel、课程表、上下左右联动效果。
