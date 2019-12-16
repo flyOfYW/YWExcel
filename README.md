@@ -7,7 +7,7 @@
 ）
 
 注意：
-支持头部刷新以及单元格点等，请移步至https://github.com/flyOfYW/YWTableExcel
+支持头部刷新以及单元格点击事件等，请移步至https://github.com/flyOfYW/YWTableExcel
 
 ## 兼容性
 1、兼容横屏和竖屏
